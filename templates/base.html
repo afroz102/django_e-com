@@ -11,6 +11,11 @@
     {% block title %}
     {% endblock title %}
 
+    <!-- For django-allauth -->
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -54,12 +59,28 @@
 
 </head>
 
-<body>
+{% include 'nav_bar/top_bar.html' %}
 
-    {% include 'nav_bar/top_bar.html' %}
+<body>
+    <div class="mt-5 pt-4" style="min-height: auto;">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
 
     {% block content %}
     {% endblock content %}
+
+    <!-- Extra body for django-allauth -->
+    {% block extra_body %}
+    {% endblock %}
 
     {% include 'nav_bar/footer.html' %}
 
