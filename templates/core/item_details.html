@@ -11,7 +11,7 @@ Product Details
 {% block content %}
 <!--Main layout-->
 <main class="mt-5 pt-4">
-  <div class="container dark-grey-text mt-5">
+  <div class="container dark-grey-text mt-5" style="min-height: 390px;">
 
     <!--Grid row-->
     <div class="row wow fadeIn">
@@ -19,7 +19,7 @@ Product Details
       <!--Grid column-->
       <div class="col-md-6 mb-4">
 
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+        <img src=" {{item.image.url}} " class="img-fluid" alt="">
 
       </div>
       <!--Grid column-->

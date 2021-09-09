@@ -96,5 +96,18 @@ LOGIN_REDIRECT_URL = '/'
 # Django crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+PUBLISHABLE_KEY = "pk_test_51JXKanSA0MyYYyHhlUzJ594Bo8MYQtQgXoOpaKxOuHJjOA9EU8XnalxSl5rjhVvmhWlOjLcTe65uHtXUiJWddQrm00LuTLdaoP"
+SECRET_KEY = "sk_test_51JXKanSA0MyYYyHh3tBvEZX6KxyYF3Timl8QZHcqFgyK7oxYkRQc29R0oSpMPOZsVW7Ia0LKd4eVCt4wZCicA2mB00AmoWyyq1"
 
-STRIPE_API_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+# STRIPE_API_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"  # from just django
+STRIPE_API_KEY = "sk_test_51JXKanSA0MyYYyHh3tBvEZX6KxyYF3Timl8QZHcqFgyK7oxYkRQc29R0oSpMPOZsVW7Ia0LKd4eVCt4wZCicA2mB00AmoWyyq1"
+
+# To fix ConnectionRefusedError at /accounts/password/reset/
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# SMTP Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sahiljmi102@gmail.com'
+EMAIL_HOST_PASSWORD = 'Sahilraza@1029534'

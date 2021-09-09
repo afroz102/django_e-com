@@ -5,17 +5,32 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
+<main>
+  <div class="container" style="min-height: 393px;">
+    <section class="my-4">
+      <div class="row wow fadeIn">
+        <div class='col-4 mx-auto text-center'>
+          <h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+          <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
+          <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button type="submit" class="btn btn-warning waves-effect">{% trans 'Sign Out' %}</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
 
-
+<script>
+  console.log(`window.innerWidth: `, window.innerWidth);
+  console.log(`window.o-w: `, window.outerWidth);
+  console.log(`window.innerheight: `, window.innerHeight);
+  console.log(`window.o-h: `, window.outerHeight);
+</script>
 {% endblock %}
